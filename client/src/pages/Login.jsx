@@ -40,12 +40,7 @@ function Login() {
 
     return (
         <div className="Login">
-            <div className="flex items-center gap-2">
-                <MdOutlineCarRental className="h-14 w-14 text-hawkes-blue" />
-                <span className="text-lg font-bold text-hawkes-blue">
-                    Bicarent
-                </span>
-            </div>
+            <img className="w-24" src="/images/Bicarent.png" alt="" />
             <h1 className="text-2xl font-bold dark:text-white">
                 Welcome, Admin BCR
             </h1>

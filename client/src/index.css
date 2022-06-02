@@ -9,14 +9,6 @@
 }
 
 @layer components {
-    .Hero {
-        @apply bg-hawkes-blue dark:bg-hawkes-dblue;
-    }
-
-    .Jumbotron {
-        @apply h-64 bg-hawkes-blue dark:bg-hawkes-dblue;
-    }
-
     .Sign {
         @apply flex h-screen w-screen items-center justify-center bg-[url('../public/images/car.jpg')] bg-cover bg-no-repeat;
     }

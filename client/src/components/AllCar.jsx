@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCars, carsSelectors } from "../features/cars";
 import Button from "./Button";
-import { MdOutlinePeopleAlt } from "react-icons/md";
-import { BsGear, BsCalendar4 } from "react-icons/bs";
+import { GiCarSeat } from "react-icons/gi";
+import { GoGear } from "react-icons/go";
+import { AiTwotoneCalendar } from "react-icons/ai";
 
 function AllCar() {
     const navigate = useNavigate();
@@ -17,49 +18,58 @@ function AllCar() {
 
     return (
         <>
-            {cars.map((item) => {
+            {cars.map((car) => {
                 return (
                     <div
-                        className="min-h-fit rounded-lg border p-6 dark:border-slate-700 2xl:w-96"
-                        key={item.id}
+                        className="overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700"
+                        key={car.id}
                     >
-                        <div className="h-fit md:h-40">
-                            <img src={item.image} alt="" className="h-full" />
-                        </div>
-                        <h2 className="text-sm dark:text-white">{item.name}</h2>
-                        <h1 className="font-bold dark:text-white">
-                            {new Intl.NumberFormat("id-ID", {
-                                style: "currency",
-                                currency: "IDR",
-                            }).format(item.price)}{" "}
-                            / hari
-                        </h1>
-                        <p className="dark:text-white">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
-                        </p>
-                        <div className="flex items-center gap-2 dark:text-white">
-                            <MdOutlinePeopleAlt />
-                            <span>{item.sheet} orang</span>
-                        </div>
-                        <div className="flex items-center gap-2 dark:text-white">
-                            <BsGear />
-                            <span>{item.motor}</span>
-                        </div>
-                        <div className="flex items-center gap-2 dark:text-white">
-                            <BsCalendar4 />
-                            <span>Tahun {item.year}</span>
+                        <img className="w-full" src={car.image} alt="" />
+                        <div className="mb-4 space-y-4 px-4">
+                            <div>
+                                <div className="text-sm font-medium dark:text-neutral-300">
+                                    {car.name}
+                                </div>
+                                <span className="font-semibold dark:text-neutral-300">
+                                    {new Intl.NumberFormat("id-ID", {
+                                        style: "currency",
+                                        currency: "IDR",
+                                    }).format(car.price)}{" "}
+                                </span>
+                                <span className="text-sm dark:text-neutral-300">
+                                    {" "}
+                                    / day
+                                </span>
+                            </div>
+                            <p className="dark:text-neutral-300">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div className="space-y-2">
+                                <div className="flex items-center gap-2 dark:text-neutral-300">
+                                    <GiCarSeat className="text-rose-500" />
+                                    <span>{car.sheet} orang</span>
+                                </div>
+                                <div className="flex items-center gap-2 dark:text-neutral-300">
+                                    <GoGear className="text-rose-500" />
+                                    <span>{car.motor}</span>
+                                </div>
+                                <div className="flex items-center gap-2 dark:text-neutral-300">
+                                    <AiTwotoneCalendar className="text-rose-500" />
+                                    <span>Tahun {car.year}</span>
+                                </div>
+                            </div>
                         </div>
                         <Button
                             className={
-                                "bg-fern px-4 py-2 text-white transition-all hover:bg-green-700"
+                                "w-full border-t border-neutral-200 p-2 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
                             }
                             onClick={() => {
-                                navigate(`${item.id}`);
+                                navigate(`${car.id}`);
                             }}
                         >
-                            Pilih Mobil
+                            Rent Car
                         </Button>
                     </div>
                 );

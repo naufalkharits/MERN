@@ -12,7 +12,7 @@ const RightSidebar = () => {
             </div>
             <div className="flex items-center justify-between px-4 dark:text-neutral-300">
                 <span className="font-medium">Widgets</span>
-                <GoGear className="cursor-pointer hover:text-cyan-500" />
+                <GoGear className="cursor-pointer hover:text-rose-500" />
             </div>
             <div className="space-y-4 px-4">
                 <Widget />

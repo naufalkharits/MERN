@@ -11,9 +11,19 @@ const AddForm = () => {
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
     const dispatch = useDispatch();
-    const createVehicle = async (e) => {
+    // insert
+    const createVehicle = (e) => {
         e.preventDefault();
-        await dispatch(
+        const formData = new FormData();
+        formData.append("file", image);
+        formData.append("upload_preset", "nvqdlovn");
+        axios
+            .post(process.env.REACT_APP_CLOUDINARY_API_URL, formData)
+            .then((res) => {
+                console.log(res);
+                setImage(res);
+            });
+        dispatch(
             insertVehicle({
                 name,
                 price,
@@ -23,22 +33,17 @@ const AddForm = () => {
         navigate("/explore");
     };
 
-    const uploadImage = () => {
-        const formData = new FormData();
-        formData.append("file", image);
-        formData.append("upload_preset", "nvqdlovn");
-
-        axios
-            .post(process.env.REACT_APP_CLOUDINARY_API_URL, formData)
-            .then((res) => {
-                console.log(res);
-            });
-    };
     return (
         <>
             <form onSubmit={createVehicle}>
                 <input type="text" onChange={(e) => setName} />
                 <input type="text" onChange={(e) => setPrice} />
+                <input
+                    type="file"
+                    onChange={(e) => {
+                        setImage(e.target.files[0]);
+                    }}
+                />
                 <Button
                     className={
                         "rounded-full border border-neutral-200 py-2 px-4 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
@@ -47,16 +52,6 @@ const AddForm = () => {
                     Save
                 </Button>
             </form>
-
-            <input
-                type="file"
-                onChange={(e) => {
-                    setImage(e.target.files[0]);
-                }}
-            />
-            <button className="dark:bg-white" onClick={uploadImage}>
-                Image
-            </button>
         </>
     );
 };

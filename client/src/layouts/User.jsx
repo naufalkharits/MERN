@@ -10,7 +10,7 @@ function Main() {
         <>
             <Navbar />
             <Hero />
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 md:px-8">
                 <CarFilter />
                 <Outlet />
                 <Footer />

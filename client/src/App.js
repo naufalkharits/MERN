@@ -1,9 +1,9 @@
 // import "./App.css";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Main from "./layouts/Main";
+import User from "./layouts/User";
 import Sign from "./layouts/Sign";
-import CMS from "./layouts/CMS";
+import Admin from "./layouts/Admin";
 import Login from "./pages/Login";
 import Car from "./pages/Car";
 import DetailCar from "./pages/DetailCar";
@@ -42,7 +42,7 @@ function App() {
     return (
         <>
             <Routes>
-                <Route path="/" element={<Main />}>
+                <Route path="/" element={<User />}>
                     <Route path="car">
                         <Route index element={<Car />} />
                         <Route path=":carId" element={<DetailCar />} />
@@ -52,7 +52,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     {/* <Route path="/register" element={<Register />} /> */}
                 </Route>
-                <Route element={<CMS />}>
+                <Route element={<Admin />}>
                     <Route path="/dashboard" element={<Home />} />
                     <Route path="/explore">
                         <Route index element={<Explore />} />

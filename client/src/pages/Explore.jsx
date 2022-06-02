@@ -7,12 +7,12 @@ import Topbar from "../components/Topbar";
 const Explore = () => {
     const navigate = useNavigate();
     return (
-        <div className="h-screen border-x border-neutral-200 dark:border-neutral-700">
+        <div className="border-x border-neutral-200 dark:border-neutral-700">
             <Topbar />
             <div className="p-8">
                 <div className="mb-8 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="h-6 w-1 bg-cyan-500"></div>
+                        <div className="h-6 w-1 bg-rose-500"></div>
                         <span className="text-2xl font-semibold dark:text-neutral-300">
                             List Car
                         </span>
@@ -28,7 +28,7 @@ const Explore = () => {
                         Add Car
                     </Button>
                 </div>
-                <div className="mb-4 flex gap-4">
+                <div className="mb-4 grid grid-cols-fit-80 justify-center gap-4">
                     <CarCard />
                 </div>
             </div>

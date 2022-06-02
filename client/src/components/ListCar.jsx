@@ -11,7 +11,7 @@ const ListCar = () => {
     return (
         <div className="p-8 dark:border-neutral-700">
             <div className="mb-8 flex items-center gap-2">
-                <div class="h-6 w-1 bg-cyan-500"></div>
+                <div class="h-6 w-1 bg-rose-500"></div>
                 <span class="text-2xl font-semibold dark:text-neutral-300">
                     List Car
                 </span>

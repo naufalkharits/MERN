@@ -8,39 +8,43 @@ import vehicles from "../APIs";
 export const uploadImage = createAsyncThunk(
     "vehicles/fetchVehicles",
     async () => {
-        const res = await vehicles.get("/vehicles");
-        return res.data;
+        try {
+            const respone = await vehicles.get("/vehicles");
+            return respone.data;
+        } catch (error) {
+            return error;
+        }
     }
 );
 
 export const fetchVehicles = createAsyncThunk(
     "vehicles/fetchVehicles",
     async () => {
-        const res = await vehicles.get("/vehicles");
-        return res.data;
+        const respone = await vehicles.get("/vehicles");
+        return respone.data;
     }
 );
 
 export const insertVehicle = createAsyncThunk(
     "vehicles/saveVehicle",
     async ({ name, price, image }) => {
-        const res = await vehicles.post("/vehicles", {
+        const respone = await vehicles.post("/vehicles", {
             name,
             price,
             image,
         });
-        return res.data;
+        return respone.data;
     }
 );
 
 export const updateVehicle = createAsyncThunk(
     "vehicles/updateVehicle",
     async ({ id, name, price }) => {
-        const res = await vehicles.put(`/vehicles/${id}`, {
+        const respone = await vehicles.put(`/vehicles/${id}`, {
             name,
             price,
         });
-        return res.data;
+        return respone.data;
     }
 );
 

@@ -32,7 +32,7 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-cyan-500 focus:ring focus:ring-cyan-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
                         >
                             <option value=""></option>
                             <option value="">Dengan Sopir</option>
@@ -42,7 +42,7 @@ function Filtered() {
                         <select
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-cyan-500 focus:ring focus:ring-cyan-500 focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
                         >
                             <option value=""></option>
                             <option value="">Dengan Sopir</option>
@@ -60,15 +60,14 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
                         />
                     ) : (
                         <input
                             type="date"
                             name=""
                             id=""
-                            disabled
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
                         />
                     )}
                 </div>
@@ -82,7 +81,7 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
                         >
                             <option value=""></option>
                             <option value="">08.00</option>
@@ -95,7 +94,7 @@ function Filtered() {
                         <select
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
                         >
                             <option value=""></option>
                             <option value="">08.00</option>
@@ -116,14 +115,14 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
                         />
                     ) : (
                         <input
                             type="number"
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-egyptian-blue focus:ring focus:ring-egyptian-blue focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
                         />
                     )}
                 </div>
@@ -131,7 +130,7 @@ function Filtered() {
                 {location.pathname === "/" ? (
                     <Button
                         className={
-                            "col-span-2 h-[42px] self-end rounded bg-cyan-500 font-bold text-white hover:bg-cyan-600 md:col-span-4 xl:col-span-1"
+                            "col-span-2 h-[42px] self-end rounded bg-rose-500 font-bold text-white hover:bg-rose-600 md:col-span-4 xl:col-span-1"
                         }
                         onClick={() => {
                             navigate("/car");
@@ -143,7 +142,7 @@ function Filtered() {
                     location.pathname !== `/car/${carId}` && (
                         <Button
                             className={
-                                "col-span-2 h-[42px] self-end rounded border border-egyptian-blue bg-white font-bold text-egyptian-blue hover:border-none hover:bg-cyan-600 hover:text-white md:col-span-4 xl:col-span-1"
+                                "col-span-2 h-[42px] self-end rounded border border-rose-500 bg-white font-bold text-rose-500 hover:border-none hover:bg-rose-600 hover:text-white md:col-span-4 xl:col-span-1"
                             }
                             onClick={() => {
                                 navigate("/car");

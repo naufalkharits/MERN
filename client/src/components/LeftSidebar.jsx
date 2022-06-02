@@ -21,7 +21,7 @@ function MainNav() {
                             <div className="dark:text-neutral-300">Admin</div>
                         </div>
                     </div>
-                    <FiChevronDown className="h-8 w-8 cursor-pointer rounded-full p-1 hover:bg-neutral-200 hover:text-cyan-500 dark:text-neutral-300 dark:hover:bg-neutral-700" />
+                    <FiChevronDown className="h-8 w-8 cursor-pointer rounded-full p-1 hover:bg-neutral-200 hover:text-rose-500 dark:text-neutral-300 dark:hover:bg-neutral-700" />
                 </div>
                 <div className="px-4">
                     <Button
@@ -51,14 +51,14 @@ function MainNav() {
             <div>
                 <div className="mb-4 px-4">
                     <Button className="flex w-full items-center gap-4 rounded-2xl py-4 px-6 hover:bg-neutral-100 dark:text-neutral-300 dark:hover:bg-neutral-700">
-                        <GoGear className="hover:text-cyan-300" />
+                        <GoGear />
                         <span className="font-medium">Settings</span>
                     </Button>
                 </div>
                 <div className="flex justify-center p-4">
                     <img
-                        className="w-16 cursor-pointer"
-                        src="/images/logo.png"
+                        className="w-20 cursor-pointer"
+                        src="/images/Bicarent.png"
                         alt=""
                         onClick={() => {
                             navigate("/");
