@@ -5,7 +5,7 @@ import {
     fetchVehicles,
     updateVehicle,
     vehiclesSelectors,
-} from "../features/vehicles";
+} from "../features/vehiclesSlice";
 import Button from "./Button";
 
 const EditForm = () => {
@@ -13,10 +13,10 @@ const EditForm = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const dispatch = useDispatch();
-    const { id } = useParams();
+    const { vehicleId } = useParams();
 
     const vehicle = useSelector((state) =>
-        vehiclesSelectors.selectById(state, id)
+        vehiclesSelectors.selectById(state, vehicleId)
     );
 
     useEffect(() => {
@@ -24,6 +24,7 @@ const EditForm = () => {
     }, [dispatch]);
 
     useEffect(() => {
+        console.log(vehicle);
         if (vehicle) {
             setName(vehicle.name);
             setPrice(vehicle.price);
@@ -32,23 +33,29 @@ const EditForm = () => {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        await dispatch(updateVehicle({ id, name, price }));
+        await dispatch(updateVehicle({ vehicleId, name, price }));
         navigate("/explore");
     };
 
     return (
         <>
             <form onSubmit={handleUpdate}>
-                <input type="text" onChange={(e) => setName} />
-                <input type="text" onChange={(e) => setPrice} />
-                <Button
-                    className={
-                        "rounded-full border border-neutral-200 py-2 px-4 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
-                    }
-                    type={"submit"}
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                    type="text"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                />
+                <button
+                    className="rounded-full border border-neutral-200 py-2 px-4 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                    type="submit"
                 >
                     Edit
-                </Button>
+                </button>
             </form>
         </>
     );

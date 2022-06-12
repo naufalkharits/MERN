@@ -15,31 +15,30 @@ const AddCar = () => {
             <div className="p-8">
                 <div className="mb-8 flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div class="h-6 w-1 bg-rose-500"></div>
-                        <span class="text-2xl font-semibold dark:text-neutral-300">
+                        <div className="h-6 w-1 bg-rose-500"></div>
+                        <span className="text-2xl font-semibold dark:text-neutral-300">
                             Add Car
                         </span>
                     </div>
-                    {/* <div className="flex items-center gap-2"> */}
-                    <Button
-                        className={
-                            "rounded-full border border-neutral-200 py-2 px-4 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
-                        }
-                        onClick={() => {
-                            navigate("/explore");
-                        }}
-                    >
-                        Cancel
-                    </Button>
-                    {/* <Button
+                    <div className="flex items-center gap-2">
+                        <Button
                             className={
-                                "rounded-full border border-neutral-200 py-2 px-4 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                                "rounded-full border border-neutral-200 py-2 px-4 hover:border-neutral-300 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
                             }
-                            type={"submit"}
+                            onClick={() => {
+                                navigate("/explore");
+                            }}
+                        >
+                            Cancel
+                        </Button>
+                        <button
+                            className="rounded-full border border-neutral-200 py-2 px-4 hover:border-neutral-300 hover:bg-neutral-200 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-700"
+                            type="submit"
+                            form="add-form"
                         >
                             Save
-                        </Button> */}
-                    {/* </div> */}
+                        </button>
+                    </div>
                 </div>
                 {location.pathname === "/explore/add" ? (
                     <AddForm />

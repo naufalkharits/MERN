@@ -1,12 +1,12 @@
 import React from "react";
 
-function AboutPackage(props) {
+function AboutPackage() {
     return (
-        <div className="AboutPackage space-y-8">
-            <h1 className="font-bold">Tentang Paket</h1>
-            <div className="">
-                <h2>Include</h2>
-                <ul className="list-disc pl-8">
+        <div className="space-y-4 rounded-xl border border-neutral-200 p-4 shadow dark:border-neutral-700">
+            <div className="font-bold">About Package</div>
+            <div>
+                <div className="font-medium">Includes</div>
+                <ul className="list-outside list-disc pl-8">
                     <li>
                         Apa saja yang termasuk dalam paket misal durasi max 12
                         jam Sudah termasuk bensin selama 12 jam
@@ -16,9 +16,9 @@ function AboutPackage(props) {
                     <li>Sudah termasuk pajak</li>
                 </ul>
             </div>
-            <div className="">
-                <h2>Exclude</h2>
-                <ul className="list-disc pl-8">
+            <div>
+                <div className="font-medium">Excludes</div>
+                <ul className="list-outside list-disc pl-8">
                     <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
                     <li>
                         Jika overtime lebih dari 12 jam akan ada tambahan biaya
@@ -27,9 +27,9 @@ function AboutPackage(props) {
                     <li>Tidak termasuk akomodasi penginapan</li>
                 </ul>
             </div>
-            <div className="">
-                <h1>Refund, Reschedule, Overtime</h1>
-                <ul className="list-disc pl-8">
+            <div>
+                <div className="font-medium">Misc</div>
+                <ul className="list-outside list-disc pl-8">
                     <li>Tidak termasuk biaya makan sopir Rp 75.000/hari</li>
                     <li>
                         Jika overtime lebih dari 12 jam akan ada tambahan biaya

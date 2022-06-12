@@ -6,6 +6,9 @@ module.exports = {
                 xs: "475px",
                 "3xl": "1600px",
             },
+            backgroundImage: {
+                // "sign-background": "[url('/public/img/car.jpg')]",
+            },
             gridTemplateColumns: {
                 "fill-fr": "repeat(auto-fill, 1fr)",
                 "fit-72": "repeat(auto-fit, 18rem)",

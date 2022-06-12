@@ -1,15 +1,17 @@
-// import "./App.css";
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import User from "./layouts/User";
 import Sign from "./layouts/Sign";
 import Admin from "./layouts/Admin";
 import Login from "./pages/Login";
 import Car from "./pages/Car";
-import DetailCar from "./pages/DetailCar";
+import RentDetail from "./pages/RentDetail";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import AddCar from "./pages/AddCar";
+import Register from "./pages/Register";
 
 function App() {
     // const [user, setUser] = useState(null);
@@ -45,12 +47,12 @@ function App() {
                 <Route path="/" element={<User />}>
                     <Route path="car">
                         <Route index element={<Car />} />
-                        <Route path=":carId" element={<DetailCar />} />
+                        <Route path=":carId" element={<RentDetail />} />
                     </Route>
                 </Route>
                 <Route element={<Sign />}>
                     <Route path="/login" element={<Login />} />
-                    {/* <Route path="/register" element={<Register />} /> */}
+                    <Route path="/register" element={<Register />} />
                 </Route>
                 <Route element={<Admin />}>
                     <Route path="/dashboard" element={<Home />} />
@@ -61,6 +63,7 @@ function App() {
                     </Route>
                 </Route>
             </Routes>
+            <ToastContainer />
         </>
     );
 }

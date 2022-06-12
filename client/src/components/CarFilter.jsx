@@ -4,12 +4,11 @@ import Button from "./Button";
 
 function Filtered() {
     const { carId } = useParams();
-
     const navigate = useNavigate();
     const location = useLocation();
 
     return (
-        <div className="-translate-y-1/2 rounded-lg border border-neutral-100 bg-white p-6 dark:border-neutral-700 dark:bg-neutral-800">
+        <div className="-translate-y-1/2 rounded-xl border border-neutral-100 bg-white p-6 shadow dark:border-neutral-700 dark:bg-neutral-800">
             {location.pathname !== "/" ? (
                 <h1 className="mb-8 text-center text-sm font-bold dark:text-white lg:text-left">
                     Pencarianmu
@@ -42,7 +41,7 @@ function Filtered() {
                         <select
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-neutral-700 bg-neutral-100 py-2 px-4 focus:border focus:border-neutral-200 focus:ring-0 dark:bg-neutral-700 dark:text-neutral-300 dark:focus:border-neutral-600"
                         >
                             <option value=""></option>
                             <option value="">Dengan Sopir</option>
@@ -60,14 +59,14 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-neutral-700"
                         />
                     ) : (
                         <input
                             type="date"
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-neutral-700 bg-neutral-100 py-2 px-4 focus:border focus:border-neutral-200 focus:ring-0 dark:bg-neutral-700 dark:text-neutral-300 dark:focus:border-neutral-600"
                         />
                     )}
                 </div>
@@ -94,7 +93,7 @@ function Filtered() {
                         <select
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-neutral-700 bg-neutral-100 py-2 px-4 focus:border focus:border-neutral-200 focus:ring-0 dark:bg-neutral-700 dark:text-neutral-300 dark:focus:border-neutral-600"
                         >
                             <option value=""></option>
                             <option value="">08.00</option>
@@ -115,14 +114,14 @@ function Filtered() {
                             name=""
                             id=""
                             disabled
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
+                            className="w-full rounded border-slate-300 focus:border-rose-600 focus:ring focus:ring-rose-600 focus:ring-opacity-5 disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none dark:bg-slate-50"
                         />
                     ) : (
                         <input
                             type="number"
                             name=""
                             id=""
-                            className="w-full rounded border-slate-300 focus:border-rose-500 focus:ring focus:ring-rose-500 focus:ring-opacity-5 dark:bg-slate-50"
+                            className="w-full rounded border-neutral-700 bg-neutral-100 py-2 px-4 focus:border focus:border-neutral-200 focus:ring-0 dark:bg-neutral-700 dark:text-neutral-300 dark:focus:border-neutral-600"
                         />
                     )}
                 </div>

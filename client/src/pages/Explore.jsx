@@ -1,4 +1,6 @@
-import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVehicles, vehiclesSelectors } from "../features/vehiclesSlice";
 import { useNavigate } from "react-router-dom";
 import CarCard from "../components/CarCard";
 import Button from "../components/Button";
@@ -6,6 +8,13 @@ import Topbar from "../components/Topbar";
 
 const Explore = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const vehicles = useSelector(vehiclesSelectors.selectAll);
+
+    useEffect(() => {
+        dispatch(fetchVehicles());
+    }, [dispatch]);
+
     return (
         <div className="border-x border-neutral-200 dark:border-neutral-700">
             <Topbar />
@@ -29,7 +38,17 @@ const Explore = () => {
                     </Button>
                 </div>
                 <div className="mb-4 grid grid-cols-fit-80 justify-center gap-4">
-                    <CarCard />
+                    {vehicles.map((car) => (
+                        <CarCard
+                            id={car.id}
+                            image={car.image}
+                            name={car.name}
+                            year={car.year}
+                            price={car.price}
+                            seat={car.seat}
+                            color={car.color}
+                        />
+                    ))}
                 </div>
             </div>
         </div>
